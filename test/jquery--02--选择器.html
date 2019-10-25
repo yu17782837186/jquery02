@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<title>jquery的选择器</title>
+		<meta charset="UTF-8"/>
+		<script src="js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//jquery选择器是存储了HTML元素对象的数组
+			//id选择器
+			function testId(){
+				var inp=$("#uname");
+				alert(inp.val());
+			}
+			
+			//标签选择器
+			function testEle(){
+				var inps=$("input");
+//				alert(inps.length);
+				alert(inps.val());//返回所有的input数组 输出第一个button的值
+				alert(inps[1].value);//数组下标的html对象的value
+			}
+			
+			//类选择器
+			function testClass(){
+				var inps=$(".common");
+				alert(inps.length);
+			}
+			
+			//组合选择器
+			function testAll(){
+				var eles=$("h3,input,hr");
+				alert(eles.length);
+			}
+			
+			//测试子选择器
+			function testChild(){
+				var inps=$("#showdiv>input");//获取的是子元素(直接相连的)
+				alert(inps.length);
+			}
+			
+			//测试层级选择器
+			function testTower(){
+				var inps=$("input:last");//获得第一个Input标签
+				alert(inps.val());
+			}
+			function testTower2(){
+				var tds=$("td:not(td[width])");//不要td带有width属性的td
+//				alert(tds.length)
+				alert(tds.html());
+
+			}
+		</script>
+		<style type="text/css">
+			.common{}
+			/*#showdiv{
+				width: 300px;
+				height: 100px;
+				border: solid 2px orange;
+			}*/
+			div{
+				width: 300px;
+				height: 100px;
+				border: solid 2px orange;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>jquery的选择器</h3>
+		<input type="button" name="" id="" value="id选择器" onclick="testId();" class="common"/>
+		<input type="button" name="" id="" value="标签选择器" onclick="testEle();"/>
+		<input type="button" name="" id="" value="类选择器" onclick="testClass();"/>
+		<input type="button" name="" id="" value="组合选择器" onclick="testAll();"/>
+		<hr />
+		用户名： <input type="text" name="" id="uname" value="张三" class="common"/>
+		<hr />
+		<input type="button" name="" id="" value="子选择器" onclick="testChild();"/>
+		<input type="button" name="" id="" value="层级选择器" onclick="testTower();"/>
+		<input type="button" name="" id="" value="层级选择器2" onclick="testTower2();"/>
+		<hr />
+		<div id="showdiv">
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="" />
+		</div>
+		<div id="">
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="" />
+			<input type="text" name="" id="" value="254" />
+		</div>
+		<table border="1px" height="200px">
+			<tr>
+				<td width="100px"></td>
+				<td width="100px"></td>
+				<td width="100px"></td>
+				<td width="100px"></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>jquery操作元素的内容</title>
+		<meta charset="UTF-8"/>
+		<script src="js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function testHtml(){
+				//获取元素的对象
+				var showdiv=$("#showdiv");
+				//获取元素的内容
+				alert(showdiv.html());//不会解析html
+			}
+			
+			function testHtml2(){
+				//获取元素内容
+				var showdiv=$("#showdiv");
+				//修改元素内容
+				showdiv.html(showdiv.html()+"<i>哈哈哈哈哈</i>");//会解析html
+			}
+			function testText(){
+				//获取元素对象
+				var showdiv=$("#showdiv");
+				//获取元素内容
+				alert(showdiv.text());//会解析html
+			}
+			function testText2(){
+				//获取元素内容
+				var showdiv=$("#showdiv");
+				//修改元素内容
+				showdiv.text("<b>8888888888888888888</b>")//不会解析html
+			}
+		</script>
+	</head>
+	<body>
+		<h3>jquery操作元素的内容</h3>
+		<input type="button" name="" id="" value="获取元素内容--html()" onclick="testHtml();"/>
+		<input type="button" name="" id="" value="修改元素内容--html()" onclick="testHtml2();"/>
+		<input type="button" name="" id="" value="获取元素内容--text()" onclick="testText();"/>
+		<input type="button" name="" id="" value="修改元素内容--text()" onclick="testText2();"/>
+		<hr />
+		<div id="showdiv">
+			<i>每天<b>好好</b>的学习，认真的人一定会成功</i>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>jquery操作元素的样式</title>
+		<meta charset="UTF-8"/>
+		<script src="js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function testCss(){
+				//获取元素对象
+				var showdiv=$("#showdiv");
+				//操作样式增加
+				showdiv.css("background-color","orange");
+				//操作样式获取
+				alert(showdiv.css("width"));
+				alert(showdiv.css("height"));
+			}
+			
+			
+			function testCss2(){
+				//获取元素对象
+				var div=$("#div01");
+				//操作样式  使用json
+				div.css({"border":"solid 1px","width":"300px","height":"300px"})
+				
+			}
+			function testAddClass(){
+				var div=$("#div01");
+				div.addClass("common");
+			}
+	
+	
+			function testAddClass2(){
+				var div=$("#div01");
+				div.addClass("dd");
+			}
+			function testRemoveClass(){
+				//获取元素对象
+				var div=$("#div01");
+				//删除元素样式
+				div.removeClass("dd");
+			}
+		</script>
+		<style type="text/css">
+			
+			#showdiv{
+				width: 300px;
+				height: 300px;
+				border: solid 1px;
+			}
+			.common{
+				width: 300px;
+				height: 300px;
+				border: solid 1px;
+				background-color: blueviolet;
+			}
+			.dd{
+				font-size: 30px;
+				font-weight: bold;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<h3>jquery操作元素的样式</h3>
+		<input type="button" name="" id="" value="操作样式--css()" onclick="testCss();"/>
+		<input type="button" name="" id="" value="操作样式--css()--json" onclick="testCss2();"/>
+		<input type="button" name="" id="" value="操作样式--addClass()" onclick="testAddClass();"/>
+		<input type="button" name="" id="" value="操作样式--addClass2()" onclick="testAddClass2();"/>
+		<input type="button" name="" id="" value="操作样式--removeClass()" onclick="testRemoveClass();"/>
+		<hr />
+		<div id="showdiv">
+			
+		</div>
+		<div id="div01" class="common dd">
+			我是div01
+		</div>
+	</body>
+</html>
